@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookQuiz - Master What You Read</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app">
+        <!-- Landing Page -->
+        <div id="landing" class="screen active">
+            <header>
+                <div class="header-content">
+                    <h1>📚 BookQuiz</h1>
+                    <p>Master what you read through active recall</p>
+                </div>
+                <div class="header-actions">
+                    <button class="login-btn" onclick="showScreen('login')">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                </div>
+            </header>
+
+            <div class="stats-preview">
+                <div class="stat">
+                    <span class="number">2,847</span>
+                    <span class="label">Concepts Mastered</span>
+                </div>
+                <div class="stat">
+                    <span class="number">156</span>
+                    <span class="label">Active Learners</span>
+                </div>
+                <div class="stat">
+                    <span class="number">8</span>
+                    <span class="label">Books Available</span>
+                </div>
+            </div>
+
+            <div class="books-showcase">
+                <h2>Master Your Favorite Books</h2>
+                <p class="showcase-subtitle">Test your understanding through active recall and spaced repetition</p>
+
+                <div class="books-grid-home">
+                    <div class="book-card-home" onclick="promptLogin('rich-dad')">
+                        <div class="book-cover rich-dad">
+                            <div class="book-icon"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="book-title">Rich Dad Poor Dad</div>
+                        </div>
+                        <h3>Rich Dad Poor Dad</h3>
+                        <p class="author">Robert Kiyosaki</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 1.2k learners</span>
+                        </div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('atomic-habits')">
+                        <div class="book-cover atomic-habits">
+                            <div class="book-icon"><i class="fas fa-atom"></i></div>
+                            <div class="book-title">Atomic Habits</div>
+                        </div>
+                        <h3>Atomic Habits</h3>
+                        <p class="author">James Clear</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 2.1k learners</span>
+                        </div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('thinking-fast')">
+                        <div class="book-cover thinking-fast">
+                            <div class="book-icon"><i class="fas fa-brain"></i></div>
+                            <div class="book-title">Thinking Fast & Slow</div>
+                        </div>
+                        <h3>Thinking, Fast and Slow</h3>
+                        <p class="author">Daniel Kahneman</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 890 learners</span>
+                        </div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('mindset')">
+                        <div class="book-cover mindset">
+                            <div class="book-icon"><i class="fas fa-seedling"></i></div>
+                            <div class="book-title">Mindset</div>
+                        </div>
+                        <h3>Mindset</h3>
+                        <p class="author">Carol Dweck</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 750 learners</span>
+                        </div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('sapiens')">
+                        <div class="book-cover sapiens">
+                            <div class="book-icon"><i class="fas fa-globe"></i></div>
+                            <div class="book-title">Sapiens</div>
+                        </div>
+                        <h3>Sapiens</h3>
+                        <p class="author">Yuval Noah Harari</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 1.5k learners</span>
+                        </div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('deep-work')">
+                        <div class="book-cover deep-work">
+                            <div class="book-icon"><i class="fas fa-bullseye"></i></div>
+                            <div class="book-title">Deep Work</div>
+                        </div>
+                        <h3>Deep Work</h3>
+                        <p class="author">Cal Newport</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 980 learners</span>
+                        </div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('psychology-money')">
+                        <div class="book-cover psychology-money">
+                            <div class="book-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="book-title">Psychology of Money</div>
+                        </div>
+                        <h3>Psychology of Money</h3>
+                        <p class="author">Morgan Housel</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 1.1k learners</span>
+                        </div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('power-now')">
+                        <div class="book-cover power-now">
+                            <div class="book-icon"><i class="fas fa-om"></i></div>
+                            <div class="book-title">The Power of Now</div>
+                        </div>
+                        <h3>The Power of Now</h3>
+                        <p class="author">Eckhart Tolle</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 650 learners</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="view-all-section">
+                    <button class="view-all-btn" onclick="showScreen('login')">
+                        <i class="fas fa-book-open"></i> Start Learning - View All Books
+                    </button>
+                </div>
+            </div>
+
+            <div class="recent-badges-preview">
+                <h3>Recent Community Achievements</h3>
+                <div class="community-badges">
+                    <div class="community-badge gold">
+                        <i class="fas fa-brain"></i>
+                        <span>Deep Thinker</span>
+                        <small>Sarah K. earned this</small>
+                    </div>
+                    <div class="community-badge silver">
+                        <i class="fas fa-fire"></i>
+                        <span>Streak Master</span>
+                        <small>Mike J. earned this</small>
+                    </div>
+                    <div class="community-badge bronze">
+                        <i class="fas fa-bolt"></i>
+                        <span>Speed Learner</span>
+                        <small>Emma D. earned this</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <button class="cta-button" onclick="showScreen('login')">
+                    <i class="fas fa-rocket"></i> Start Learning Today
+                </button>
+                <p class="cta-subtitle">Join thousands of learners mastering their favorite books</p>
+            </div>
+        </div>
+
+        <!-- Login Screen -->
+        <div id="login" class="screen">
+            <div class="login-container">
+                <div class="login-header">
+                    <h2><i class="fas fa-sign-in-alt"></i> Welcome Back</h2>
+                    <p>Login to continue your learning journey</p>
+                </div>
+
+                <div class="login-form">
+                    <div class="demo-notice">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Demo Login: <strong>user</strong> / <strong>pass</strong></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-username">
+                            <i class="fas fa-user"></i> Username
+                        </label>
+                        <input type="text" id="login-username" placeholder="Enter username" value="user">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password">
+                            <i class="fas fa-lock"></i> Password
+                        </label>
+                        <input type="password" id="login-password" placeholder="Enter password" value="pass">
+                    </div>
+
+                    <button class="login-submit-btn" onclick="handleLogin()">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+
+                    <div class="login-error hidden" id="login-error">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Invalid credentials. Use: user / pass
+                    </div>
+                </div>
+
+                <button class="nav-button secondary" onclick="showScreen('landing')">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </button>
+            </div>
+        </div>
+
+        <!-- Profile Setup -->
+        <div id="setup" class="screen">
+            <div class="setup-header">
+                <h2>Welcome to BookQuiz! 👋</h2>
+                <p>Let's set up your learning profile</p>
+            </div>
+
+            <div class="setup-form">
+                <div class="form-group">
+                    <label for="username">What should we call you?</label>
+                    <input type="text" id="username" placeholder="Enter your name" maxlength="20">
+                </div>
+
+                <div class="form-group">
+                    <label>Choose your learning goal:</label>
+                    <div class="goal-options">
+                        <button class="goal-btn" data-goal="casual" onclick="selectGoal('casual')">
+                            <span class="goal-icon"><i class="fas fa-book-open"></i></span>
+                            <span class="goal-title">Casual Reader</span>
+                            <span class="goal-desc">1-2 books per month</span>
+                        </button>
+                        <button class="goal-btn" data-goal="focused" onclick="selectGoal('focused')">
+                            <span class="goal-icon"><i class="fas fa-crosshairs"></i></span>
+                            <span class="goal-title">Focused Learner</span>
+                            <span class="goal-desc">Deep understanding</span>
+                        </button>
+                        <button class="goal-btn" data-goal="speed" onclick="selectGoal('speed')">
+                            <span class="goal-icon"><i class="fas fa-rocket"></i></span>
+                            <span class="goal-title">Speed Learner</span>
+                            <span class="goal-desc">Quick concepts</span>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="setup-complete-btn" onclick="completeSetup()" disabled>Complete Setup</button>
+            </div>
+        </div>
+
+        <!-- User Profile -->
+        <div id="profile" class="screen">
+            <div class="profile-header">
+                <div class="avatar">👤</div>
+                <div class="user-info">
+                    <h2>Alex Chen</h2>
+                    <p>Learning Streak: 12 days 🔥</p>
+                </div>
+                <div class="level-badge">Level 7</div>
+            </div>
+
+            <div class="badges-section">
+                <h3>Recent Badges</h3>
+                <div class="badges">
+                    <div class="badge earned gold">
+                        <i class="fas fa-brain"></i>
+                        <span>Deep Thinker</span>
+                    </div>
+                    <div class="badge earned silver">
+                        <i class="fas fa-bolt"></i>
+                        <span>Speed Learner</span>
+                    </div>
+                    <div class="badge earned bronze">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Concept Master</span>
+                    </div>
+                    <div class="badge earned purple">
+                        <i class="fas fa-fire"></i>
+                        <span>Streak Master</span>
+                    </div>
+                    <div class="badge earned blue">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Knowledge Seeker</span>
+                    </div>
+                    <div class="badge locked">
+                        <i class="fas fa-trophy"></i>
+                        <span>Book Crusher</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="nav-button" onclick="showScreen('books')">Choose a Book</button>
+            <button class="nav-button secondary" onclick="showScreen('leaderboard')">View Leaderboard</button>
+        </div>
+
+        <!-- Book Selection -->
+        <div id="books" class="screen">
+            <h2>Choose Your Book</h2>
+            <div class="books-grid">
+                <div class="book-card" onclick="selectBook('rich-dad')">
+                    <div class="book-cover rich-dad">
+                        <div class="book-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="book-title">Rich Dad Poor Dad</div>
+                    </div>
+                    <h3>Rich Dad Poor Dad</h3>
+                    <div class="book-author">Robert Kiyosaki</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 60%"></div>
+                        <span>3/5 concepts mastered</span>
+                    </div>
+                </div>
+
+                <div class="book-card" onclick="selectBook('thinking-fast')">
+                    <div class="book-cover thinking-fast">
+                        <div class="book-icon"><i class="fas fa-brain"></i></div>
+                        <div class="book-title">Thinking Fast & Slow</div>
+                    </div>
+                    <h3>Thinking, Fast and Slow</h3>
+                    <div class="book-author">Daniel Kahneman</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 40%"></div>
+                        <span>2/5 concepts mastered</span>
+                    </div>
+                </div>
+
+                <div class="book-card" onclick="selectBook('atomic-habits')">
+                    <div class="book-cover atomic-habits">
+                        <div class="book-icon"><i class="fas fa-atom"></i></div>
+                        <div class="book-title">Atomic Habits</div>
+                    </div>
+                    <h3>Atomic Habits</h3>
+                    <div class="book-author">James Clear</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 80%"></div>
+                        <span>4/5 concepts mastered</span>
+                    </div>
+                </div>
+
+                <div class="book-card" onclick="selectBook('mindset')">
+                    <div class="book-cover mindset">
+                        <div class="book-icon"><i class="fas fa-seedling"></i></div>
+                        <div class="book-title">Mindset</div>
+                    </div>
+                    <h3>Mindset</h3>
+                    <div class="book-author">Carol Dweck</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 20%"></div>
+                        <span>1/5 concepts mastered</span>
+                    </div>
+                </div>
+
+                <div class="book-card" onclick="selectBook('sapiens')">
+                    <div class="book-cover sapiens">
+                        <div class="book-icon"><i class="fas fa-globe"></i></div>
+                        <div class="book-title">Sapiens</div>
+                    </div>
+                    <h3>Sapiens</h3>
+                    <div class="book-author">Yuval Noah Harari</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 0%"></div>
+                        <span>0/5 concepts mastered</span>
+                    </div>
+                </div>
+
+                <div class="book-card" onclick="selectBook('deep-work')">
+                    <div class="book-cover deep-work">
+                        <div class="book-icon"><i class="fas fa-bullseye"></i></div>
+                        <div class="book-title">Deep Work</div>
+                    </div>
+                    <h3>Deep Work</h3>
+                    <div class="book-author">Cal Newport</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 60%"></div>
+                        <span>3/5 concepts mastered</span>
+                    </div>
+                </div>
+
+                <div class="book-card" onclick="selectBook('psychology-money')">
+                    <div class="book-cover psychology-money">
+                        <div class="book-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="book-title">Psychology of Money</div>
+                    </div>
+                    <h3>Psychology of Money</h3>
+                    <div class="book-author">Morgan Housel</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 40%"></div>
+                        <span>2/5 concepts mastered</span>
+                    </div>
+                </div>
+
+                <div class="book-card" onclick="selectBook('power-now')">
+                    <div class="book-cover power-now">
+                        <div class="book-icon"><i class="fas fa-om"></i></div>
+                        <div class="book-title">The Power of Now</div>
+                    </div>
+                    <h3>The Power of Now</h3>
+                    <div class="book-author">Eckhart Tolle</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 0%"></div>
+                        <span>0/5 concepts mastered</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="nav-button secondary" onclick="showScreen('profile')">Back to Profile</button>
+        </div>
+
+        <!-- Quiz Interface -->
+        <div id="quiz" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-top-bar">
+                    <button class="quit-quiz-btn" onclick="confirmQuitQuiz()">
+                        <i class="fas fa-times"></i> Quit Quiz
+                    </button>
+                </div>
+
+                <div class="book-info">
+                    <div class="book-title-section">
+                        <span id="current-book">Rich Dad Poor Dad</span>
+                        <span id="current-author">Robert Kiyosaki</span>
+                    </div>
+                    <div class="quiz-progress">
+                        <span id="question-counter">Question 1 of 5</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="quiz-progress" style="width: 20%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="current-score">0</span>
+                        <span class="stat-label">Correct</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="time-elapsed">0:00</span>
+                        <span class="stat-label">Time</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <h3 id="question-text">What is the key difference between assets and liabilities according to Kiyosaki?
+                </h3>
+
+                <div class="answers" id="answers">
+                    <button class="answer-btn" onclick="selectAnswer(0)">Assets put money in your pocket, liabilities
+                        take money out</button>
+                    <button class="answer-btn" onclick="selectAnswer(1)">Assets are expensive, liabilities are
+                        cheap</button>
+                    <button class="answer-btn" onclick="selectAnswer(2)">Assets are physical, liabilities are
+                        digital</button>
+                    <button class="answer-btn" onclick="selectAnswer(3)">There is no real difference</button>
+                </div>
+
+                <div id="feedback" class="feedback hidden">
+                    <div class="feedback-content">
+                        <span class="feedback-icon">✅</span>
+                        <p><strong>Correct!</strong> Assets generate income and put money in your pocket, while
+                            liabilities take money out. This is the foundation of building wealth.</p>
+                    </div>
+                    <button class="next-btn" onclick="nextQuestion()">Next Question</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div id="results" class="screen">
+            <div class="results-header">
+                <h2>Quiz Complete! 🎉</h2>
+                <div class="score-circle">
+                    <span class="score">4/5</span>
+                    <span class="percentage">80%</span>
+                </div>
+            </div>
+
+            <div class="results-details">
+                <div class="badge-earned">
+                    <span class="badge-icon"><i class="fas fa-medal"></i></span>
+                    <span>New Badge: Concept Master!</span>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat">
+                        <span class="number">+50</span>
+                        <span class="label">XP Earned</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">12</span>
+                        <span class="label">Day Streak</span>
+                    </div>
+                </div>
+
+                <div class="next-review">
+                    <p>💡 Next review in 3 days for optimal retention</p>
+                </div>
+            </div>
+
+            <button class="nav-button" onclick="showScreen('books')">Try Another Book</button>
+            <button class="nav-button secondary" onclick="showScreen('leaderboard')">View Leaderboard</button>
+        </div>
+
+        <!-- Leaderboard -->
+        <div id="leaderboard" class="screen">
+            <h2>Community Leaderboard</h2>
+
+            <div class="leaderboard-tabs">
+                <button class="tab active" onclick="showLeaderboard('weekly')">This Week</button>
+                <button class="tab" onclick="showLeaderboard('alltime')">All Time</button>
+            </div>
+
+            <div class="leaderboard-list">
+                <div class="leaderboard-item rank-1">
+                    <span class="rank gold-medal"><i class="fas fa-medal"></i></span>
+                    <div class="user">
+                        <span class="name">Sarah Kim</span>
+                        <span class="level"><i class="fas fa-star"></i> Level 12</span>
+                    </div>
+                    <span class="score">2,847 XP</span>
+                </div>
+
+                <div class="leaderboard-item rank-2">
+                    <span class="rank silver-medal"><i class="fas fa-medal"></i></span>
+                    <div class="user">
+                        <span class="name">Mike Johnson</span>
+                        <span class="level"><i class="fas fa-star"></i> Level 10</span>
+                    </div>
+                    <span class="score">2,156 XP</span>
+                </div>
+
+                <div class="leaderboard-item rank-3">
+                    <span class="rank bronze-medal"><i class="fas fa-medal"></i></span>
+                    <div class="user">
+                        <span class="name">Emma Davis</span>
+                        <span class="level"><i class="fas fa-star"></i> Level 9</span>
+                    </div>
+                    <span class="score">1,923 XP</span>
+                </div>
+
+                <div class="leaderboard-item current-user">
+                    <span class="rank">7</span>
+                    <div class="user">
+                        <span class="name">Alex Chen (You)</span>
+                        <span class="level"><i class="fas fa-star"></i> Level 7</span>
+                    </div>
+                    <span class="score">1,456 XP</span>
+                </div>
+            </div>
+
+            <button class="nav-button secondary" onclick="showScreen('profile')">Back to Profile</button>
+        </div>
+
+        <!-- Quit Quiz Confirmation Modal -->
+        <div id="quit-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Quit Quiz?</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to quit this quiz?</p>
+                    <p class="modal-warning">Your progress will be lost and you'll need to start over.</p>
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-btn cancel" onclick="closeQuitModal()">
+                        <i class="fas fa-arrow-left"></i> Continue Quiz
+                    </button>
+                    <button class="modal-btn confirm" onclick="quitQuiz()">
+                        <i class="fas fa-times"></i> Quit Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
