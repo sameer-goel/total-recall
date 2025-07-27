@@ -616,6 +616,39 @@ header {
     transform: translateY(-1px);
 }
 
+/* Enhanced home book card */
+.enhanced-home {
+    position: relative;
+}
+
+.book-options-home {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.enhanced-home:hover .book-options-home {
+    display: flex;
+}
+
+.enhanced-home:hover .book-cover,
+.enhanced-home:hover h3,
+.enhanced-home:hover .author,
+.enhanced-home:hover .book-stats,
+.enhanced-home:hover .lesson-badge {
+    opacity: 0.3;
+}
+
 /* Lessons Screen */
 .lessons-header {
     margin-bottom: 40px;
@@ -1648,6 +1681,67 @@ header {
 
 .book-cover.power-now {
     background: linear-gradient(135deg, #00796B, #009688);
+}
+
+/* Neuroscience Books */
+.book-cover.behave {
+    background: linear-gradient(135deg, #8E24AA, #AB47BC);
+}
+
+.book-cover.predictably-irrational {
+    background: linear-gradient(135deg, #E91E63, #F06292);
+}
+
+.book-cover.brain-that-changes {
+    background: linear-gradient(135deg, #673AB7, #9575CD);
+}
+
+/* AI Books */
+.book-cover.life-3-0 {
+    background: linear-gradient(135deg, #37474F, #607D8B);
+}
+
+.book-cover.human-compatible {
+    background: linear-gradient(135deg, #455A64, #78909C);
+}
+
+.book-cover.prompt-engineering-guide {
+    background: linear-gradient(135deg, #1565C0, #42A5F5);
+}
+
+.book-cover.generative-ai-handbook {
+    background: linear-gradient(135deg, #6A1B9A, #BA68C8);
+}
+
+.book-cover.agentic-ai-systems {
+    background: linear-gradient(135deg, #BF360C, #FF5722);
+}
+
+/* Category Badges */
+.category-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.category-badge.neuroscience {
+    background: linear-gradient(45deg, #E91E63, #F06292);
+    color: white;
+}
+
+.category-badge.ai {
+    background: linear-gradient(45deg, #37474F, #607D8B);
+    color: white;
+}
+
+.category-badge.ai-eng {
+    background: linear-gradient(45deg, #1565C0, #42A5F5);
+    color: white;
 }
 
 .book-card h3 {

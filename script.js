@@ -3,6 +3,7 @@ const quizData = {
     'rich-dad': {
         title: 'Rich Dad Poor Dad',
         author: 'Robert Kiyosaki',
+        category: 'Finance',
         questions: [
             {
                 question: "What is the key difference between assets and liabilities according to Kiyosaki?",
@@ -64,6 +65,8 @@ const quizData = {
     'thinking-fast': {
         title: 'Thinking, Fast and Slow',
         author: 'Daniel Kahneman',
+        category: 'Psychology',
+        hasLessons: true,
         questions: [
             {
                 question: "What is System 1 thinking?",
@@ -92,6 +95,7 @@ const quizData = {
     'atomic-habits': {
         title: 'Atomic Habits',
         author: 'James Clear',
+        category: 'Self-Improvement',
         questions: [
             {
                 question: "What is the 1% rule in habit formation?",
@@ -153,6 +157,7 @@ const quizData = {
     'mindset': {
         title: 'Mindset',
         author: 'Carol Dweck',
+        category: 'Psychology',
         questions: [
             {
                 question: "What is the key difference between fixed and growth mindset?",
@@ -181,6 +186,7 @@ const quizData = {
     'sapiens': {
         title: 'Sapiens',
         author: 'Yuval Noah Harari',
+        category: 'History',
         questions: [
             {
                 question: "What are the three major revolutions in human history according to Harari?",
@@ -209,6 +215,7 @@ const quizData = {
     'deep-work': {
         title: 'Deep Work',
         author: 'Cal Newport',
+        category: 'Productivity',
         questions: [
             {
                 question: "What is deep work?",
@@ -248,6 +255,7 @@ const quizData = {
     'psychology-money': {
         title: 'Psychology of Money',
         author: 'Morgan Housel',
+        category: 'Finance',
         questions: [
             {
                 question: "What is the most important factor in building wealth according to Housel?",
@@ -276,6 +284,7 @@ const quizData = {
     'power-now': {
         title: 'The Power of Now',
         author: 'Eckhart Tolle',
+        category: 'Mindfulness',
         questions: [
             {
                 question: "What is the main message of The Power of Now?",
@@ -300,6 +309,240 @@ const quizData = {
                 explanation: "Tolle refers to the constant mental chatter and self-talk as the ego, which creates suffering by dwelling on past and future rather than the present."
             }
         ]
+    },
+    // NEUROSCIENCE BOOKS
+    'behave': {
+        title: 'Behave',
+        author: 'Robert Sapolsky',
+        category: 'Neuroscience',
+        questions: [
+            {
+                question: "According to Sapolsky, what determines human behavior?",
+                answers: [
+                    "Free will alone",
+                    "A complex interaction of biology, environment, and experience",
+                    "Genetics only",
+                    "Social conditioning only"
+                ],
+                correct: 1,
+                explanation: "Sapolsky argues that behavior emerges from the interaction of neurobiological, hormonal, developmental, and environmental factors across multiple timescales."
+            },
+            {
+                question: "What is the role of the prefrontal cortex in behavior?",
+                answers: [
+                    "Controls basic reflexes",
+                    "Regulates emotions and executive decision-making",
+                    "Processes sensory information",
+                    "Controls motor functions"
+                ],
+                correct: 1,
+                explanation: "The prefrontal cortex is crucial for executive functions, impulse control, moral reasoning, and regulating emotional responses from the limbic system."
+            }
+        ]
+    },
+    'predictably-irrational': {
+        title: 'Predictably Irrational',
+        author: 'Dan Ariely',
+        category: 'Neuroscience',
+        questions: [
+            {
+                question: "What does Ariely mean by 'predictably irrational'?",
+                answers: [
+                    "Humans are completely random in their decisions",
+                    "People make systematic, predictable errors in judgment",
+                    "Rationality is impossible to achieve",
+                    "Emotions always override logic"
+                ],
+                correct: 1,
+                explanation: "Ariely shows that while humans aren't rational, our irrationality follows predictable patterns that can be studied and understood."
+            },
+            {
+                question: "What is the 'anchoring effect' in decision-making?",
+                answers: [
+                    "People stick to their first decisions",
+                    "Initial information heavily influences subsequent judgments",
+                    "Decisions are tied to emotional states",
+                    "People avoid making difficult choices"
+                ],
+                correct: 1,
+                explanation: "The anchoring effect occurs when people rely too heavily on the first piece of information encountered when making decisions."
+            }
+        ]
+    },
+    'brain-that-changes': {
+        title: 'The Brain That Changes Itself',
+        author: 'Norman Doidge',
+        category: 'Neuroscience',
+        questions: [
+            {
+                question: "What is neuroplasticity?",
+                answers: [
+                    "The brain's ability to change and reorganize throughout life",
+                    "The flexibility of brain tissue",
+                    "The brain's resistance to damage",
+                    "The speed of neural transmission"
+                ],
+                correct: 0,
+                explanation: "Neuroplasticity refers to the brain's remarkable ability to reorganize, form new neural connections, and adapt throughout a person's lifetime."
+            },
+            {
+                question: "According to Doidge, when does neuroplasticity occur?",
+                answers: [
+                    "Only during childhood",
+                    "Only after brain injury",
+                    "Throughout our entire lives",
+                    "Only during sleep"
+                ],
+                correct: 2,
+                explanation: "Doidge demonstrates that neuroplasticity continues throughout life, allowing the brain to adapt, learn, and recover at any age."
+            }
+        ]
+    },
+    // ARTIFICIAL INTELLIGENCE BOOKS
+    'life-3-0': {
+        title: 'Life 3.0',
+        author: 'Max Tegmark',
+        category: 'Artificial Intelligence',
+        questions: [
+            {
+                question: "What does Tegmark mean by 'Life 3.0'?",
+                answers: [
+                    "Biological life",
+                    "Cultural life that can design its software",
+                    "Life that can design both its software and hardware",
+                    "Digital life forms"
+                ],
+                correct: 2,
+                explanation: "Life 3.0 refers to the stage where beings can design both their software (learning/goals) and hardware (physical form), potentially achieved through advanced AI."
+            },
+            {
+                question: "What is the 'control problem' in AI?",
+                answers: [
+                    "How to control AI development speed",
+                    "How to ensure AI systems remain aligned with human values",
+                    "How to control AI costs",
+                    "How to control AI access"
+                ],
+                correct: 1,
+                explanation: "The control problem refers to the challenge of ensuring that advanced AI systems remain beneficial and aligned with human values and intentions."
+            }
+        ]
+    },
+    'human-compatible': {
+        title: 'Human Compatible',
+        author: 'Stuart Russell',
+        category: 'Artificial Intelligence',
+        questions: [
+            {
+                question: "What is Russell's main concern about AI development?",
+                answers: [
+                    "AI will be too expensive",
+                    "AI systems optimizing for the wrong objectives",
+                    "AI will be too slow",
+                    "AI will replace all jobs"
+                ],
+                correct: 1,
+                explanation: "Russell argues that the main risk is AI systems becoming very good at achieving objectives that are not aligned with human values and preferences."
+            },
+            {
+                question: "What does Russell propose as a solution for AI alignment?",
+                answers: [
+                    "Stop AI development",
+                    "AI systems that are uncertain about human preferences and defer to humans",
+                    "Faster AI development",
+                    "Government regulation only"
+                ],
+                correct: 1,
+                explanation: "Russell proposes that AI systems should be designed to be uncertain about human preferences and actively seek to learn and defer to human judgment."
+            }
+        ]
+    },
+    'prompt-engineering-guide': {
+        title: 'The Prompt Engineering Guide',
+        author: 'Various Contributors',
+        category: 'AI Engineering',
+        questions: [
+            {
+                question: "What is prompt engineering?",
+                answers: [
+                    "Building AI hardware",
+                    "The practice of designing inputs to get desired outputs from AI models",
+                    "Programming AI from scratch",
+                    "Training AI models"
+                ],
+                correct: 1,
+                explanation: "Prompt engineering is the practice of crafting effective inputs (prompts) to guide AI language models toward producing desired outputs."
+            },
+            {
+                question: "What is 'few-shot prompting'?",
+                answers: [
+                    "Using very short prompts",
+                    "Providing a few examples in the prompt to guide the model",
+                    "Asking multiple questions at once",
+                    "Using prompts with few words"
+                ],
+                correct: 1,
+                explanation: "Few-shot prompting involves providing a few examples of the desired input-output pattern to help the model understand the task."
+            }
+        ]
+    },
+    'generative-ai-handbook': {
+        title: 'Generative AI Handbook',
+        author: 'Multiple Authors',
+        category: 'AI Engineering',
+        questions: [
+            {
+                question: "What distinguishes generative AI from other AI types?",
+                answers: [
+                    "It's faster than other AI",
+                    "It creates new content rather than just analyzing existing data",
+                    "It uses less computing power",
+                    "It's more accurate than other AI"
+                ],
+                correct: 1,
+                explanation: "Generative AI is designed to create new content (text, images, code, etc.) rather than just classify or analyze existing data."
+            },
+            {
+                question: "What is a 'transformer' in the context of generative AI?",
+                answers: [
+                    "A robot that changes shape",
+                    "A neural network architecture that processes sequences",
+                    "A data conversion tool",
+                    "A power supply component"
+                ],
+                correct: 1,
+                explanation: "Transformers are neural network architectures that excel at processing sequential data and form the foundation of modern language models like GPT."
+            }
+        ]
+    },
+    'agentic-ai-systems': {
+        title: 'Agentic AI Systems',
+        author: 'Research Collective',
+        category: 'AI Engineering',
+        questions: [
+            {
+                question: "What defines an 'agentic' AI system?",
+                answers: [
+                    "AI that works for government agencies",
+                    "AI that can act autonomously to achieve goals",
+                    "AI that is very fast",
+                    "AI that mimics human agents"
+                ],
+                correct: 1,
+                explanation: "Agentic AI systems are designed to act autonomously, make decisions, and take actions to achieve specified goals with minimal human intervention."
+            },
+            {
+                question: "What is a key challenge in agentic AI development?",
+                answers: [
+                    "Making AI faster",
+                    "Ensuring AI agents remain aligned with intended objectives",
+                    "Reducing AI costs",
+                    "Making AI more user-friendly"
+                ],
+                correct: 1,
+                explanation: "A major challenge is ensuring that autonomous AI agents pursue their goals in ways that remain aligned with human values and intentions."
+            }
+        ]
     }
 };
 
@@ -315,6 +558,7 @@ let quizStartTime = null;
 let timerInterval = null;
 let isLoggedIn = false;
 let pendingBookSelection = null;
+let pendingAction = null;
 
 // Login functions
 function promptLogin(bookId) {
@@ -322,6 +566,18 @@ function promptLogin(bookId) {
         selectBook(bookId);
     } else {
         pendingBookSelection = bookId;
+        pendingAction = 'quiz';
+        showScreen('login');
+    }
+}
+
+// Specific function for lesson login prompts
+function promptLoginForLessons(bookId) {
+    if (isLoggedIn) {
+        showLessons(bookId);
+    } else {
+        pendingBookSelection = bookId;
+        pendingAction = 'lessons';
         showScreen('login');
     }
 }
@@ -344,9 +600,14 @@ function handleLogin() {
         // Hide error
         errorElement.classList.add('hidden');
         
-        // If there was a pending book selection, go to that book
+        // Handle pending actions
         if (pendingBookSelection) {
-            selectBook(pendingBookSelection);
+            if (pendingAction === 'lessons') {
+                showLessons(pendingBookSelection);
+                pendingAction = null;
+            } else {
+                selectBook(pendingBookSelection);
+            }
             pendingBookSelection = null;
         } else {
             showScreen('profile');
@@ -461,6 +722,13 @@ function showLessons(bookId) {
     
     currentBook = bookId;
     showScreen('lessons');
+}
+
+// Enhanced prompt login to handle lesson selection
+function promptLoginForLessons(bookId) {
+    pendingBookSelection = bookId;
+    pendingAction = 'lessons';
+    showScreen('login');
 }
 
 // Book selection
@@ -908,6 +1176,18 @@ function completeLesson() {
 function isLessonCompleted(lessonId) {
     const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]');
     return completedLessons.includes(lessonId);
+}
+
+// Show book options on homepage
+function showBookOptionsHome(bookId) {
+    // For enhanced books on homepage, show options on hover
+    // The actual navigation is handled by the button clicks inside
+    if (bookId === 'thinking-fast') {
+        // Options are shown via CSS hover, buttons handle the actual navigation
+        return;
+    } else {
+        promptLogin(bookId);
+    }
 }
 
 // Show locked message

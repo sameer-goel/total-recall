@@ -30,15 +30,15 @@
 
             <div class="stats-preview">
                 <div class="stat">
-                    <span class="number">2,847</span>
+                    <span class="number">4,250</span>
                     <span class="label">Concepts Mastered</span>
                 </div>
                 <div class="stat">
-                    <span class="number">156</span>
+                    <span class="number">320</span>
                     <span class="label">Active Learners</span>
                 </div>
                 <div class="stat">
-                    <span class="number">8</span>
+                    <span class="number">16</span>
                     <span class="label">Books Available</span>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
 
-                    <div class="book-card-home" onclick="promptLogin('thinking-fast')">
+                    <div class="book-card-home enhanced-home" onclick="showBookOptionsHome('thinking-fast')">
                         <div class="book-cover thinking-fast">
                             <div class="book-icon"><i class="fas fa-brain"></i></div>
                             <div class="book-title">Thinking Fast & Slow</div>
@@ -88,6 +88,16 @@
                         </div>
                         <div class="lesson-badge">
                             <i class="fas fa-graduation-cap"></i> Study Lessons Available
+                        </div>
+                        <div class="book-options-home">
+                            <button class="option-btn lesson-btn"
+                                onclick="event.stopPropagation(); promptLoginForLessons('thinking-fast')">
+                                <i class="fas fa-book-open"></i> Study Lessons
+                            </button>
+                            <button class="option-btn quiz-btn"
+                                onclick="event.stopPropagation(); promptLogin('thinking-fast')">
+                                <i class="fas fa-question-circle"></i> Take Quiz
+                            </button>
                         </div>
                     </div>
 
