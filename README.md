@@ -128,7 +128,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Sameer Goel**
 - GitHub: [@sameer-goel](https://github.com/sameer-goel)
-- LinkedIn: [Add your LinkedIn profile]
+- LinkedIn: [linkedin.com/in/sameer-goel](https://www.linkedin.com/in/sameer-goel/)
 
 ---
 

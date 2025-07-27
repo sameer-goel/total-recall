@@ -650,6 +650,17 @@ function showLeaderboard(type) {
     // For demo purposes, we'll just show the same data
 }
 
+// Daily tips for learning
+const learningTips = [
+    "Before starting a quiz, spend 30 seconds trying to recall what you remember about the book. This 'pre-test' primes your brain for better learning.",
+    "Don't just memorize facts - try to connect new concepts to things you already know. This creates stronger neural pathways.",
+    "Take breaks between study sessions. Your brain consolidates memories during rest periods, making learning more effective.",
+    "Explain concepts out loud as if teaching someone else. This 'Feynman Technique' reveals gaps in your understanding.",
+    "Focus on your mistakes - they're learning opportunities. Spend extra time understanding why you got something wrong.",
+    "Mix up your practice sessions. Study different books or topics in the same session for better retention.",
+    "Set small, achievable daily goals. Consistency beats intensity when it comes to long-term learning."
+];
+
 // Initialize app
 document.addEventListener('DOMContentLoaded', function() {
     // Add name input listener
@@ -672,6 +683,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    
+    // Set daily tip
+    setDailyTip();
     
     // Add some interactive animations
     document.querySelectorAll('.book-card, .book-card-home').forEach(card => {
@@ -710,6 +724,19 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(typeWriter, 500);
     }
 });
+
+// Set daily learning tip
+function setDailyTip() {
+    const tipElement = document.getElementById('daily-tip-content');
+    if (tipElement) {
+        // Use date to ensure same tip per day
+        const today = new Date().getDate();
+        const tipIndex = today % learningTips.length;
+        const tip = learningTips[tipIndex];
+        
+        tipElement.innerHTML = `<p><strong>Active Recall in Action:</strong> ${tip}</p>`;
+    }
+}
 
 // Add some demo data updates for portfolio effect
 setInterval(() => {
