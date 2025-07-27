@@ -558,7 +558,7 @@ let quizStartTime = null;
 let timerInterval = null;
 let isLoggedIn = false;
 let pendingBookSelection = null;
-let pendingAction = null;
+// Removed pendingAction variable - no longer needed
 
 // Login functions
 function promptLogin(bookId) {
@@ -566,18 +566,6 @@ function promptLogin(bookId) {
         selectBook(bookId);
     } else {
         pendingBookSelection = bookId;
-        pendingAction = 'quiz';
-        showScreen('login');
-    }
-}
-
-// Specific function for lesson login prompts
-function promptLoginForLessons(bookId) {
-    if (isLoggedIn) {
-        showLessons(bookId);
-    } else {
-        pendingBookSelection = bookId;
-        pendingAction = 'lessons';
         showScreen('login');
     }
 }
@@ -600,14 +588,9 @@ function handleLogin() {
         // Hide error
         errorElement.classList.add('hidden');
         
-        // Handle pending actions
+        // Handle pending book selection
         if (pendingBookSelection) {
-            if (pendingAction === 'lessons') {
-                showLessons(pendingBookSelection);
-                pendingAction = null;
-            } else {
-                selectBook(pendingBookSelection);
-            }
+            selectBook(pendingBookSelection);
             pendingBookSelection = null;
         } else {
             showScreen('profile');
@@ -702,33 +685,9 @@ function showScreen(screenId) {
     }
 }
 
-// Book selection with options
+// Simplified book selection - removed lesson functionality
 function showBookOptions(bookId) {
-    // For enhanced books, show options instead of direct quiz
-    if (bookId === 'thinking-fast') {
-        // Options are shown in the UI, no additional action needed
-        return;
-    } else {
-        selectBook(bookId);
-    }
-}
-
-// Show lessons for a book
-function showLessons(bookId) {
-    if (!isLoggedIn) {
-        promptLogin(bookId);
-        return;
-    }
-    
-    currentBook = bookId;
-    showScreen('lessons');
-}
-
-// Enhanced prompt login to handle lesson selection
-function promptLoginForLessons(bookId) {
-    pendingBookSelection = bookId;
-    pendingAction = 'lessons';
-    showScreen('login');
+    selectBook(bookId);
 }
 
 // Book selection
@@ -920,9 +879,9 @@ function quitQuiz() {
     selectedAnswer = null;
     quizStartTime = null;
     
-    // Close modal and go to books screen
+    // Close modal and go to landing page (homepage)
     closeQuitModal();
-    showScreen('books');
+    showScreen('landing');
 }
 
 // Leaderboard tabs
@@ -1178,16 +1137,9 @@ function isLessonCompleted(lessonId) {
     return completedLessons.includes(lessonId);
 }
 
-// Show book options on homepage
+// Simplified homepage book selection
 function showBookOptionsHome(bookId) {
-    // For enhanced books on homepage, show options on hover
-    // The actual navigation is handled by the button clicks inside
-    if (bookId === 'thinking-fast') {
-        // Options are shown via CSS hover, buttons handle the actual navigation
-        return;
-    } else {
-        promptLogin(bookId);
-    }
+    promptLogin(bookId);
 }
 
 // Show locked message

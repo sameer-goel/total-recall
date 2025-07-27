@@ -28,20 +28,7 @@
                 </div>
             </header>
 
-            <div class="stats-preview">
-                <div class="stat">
-                    <span class="number">4,250</span>
-                    <span class="label">Concepts Mastered</span>
-                </div>
-                <div class="stat">
-                    <span class="number">320</span>
-                    <span class="label">Active Learners</span>
-                </div>
-                <div class="stat">
-                    <span class="number">16</span>
-                    <span class="label">Books Available</span>
-                </div>
-            </div>
+
 
             <div class="books-showcase">
                 <h2>Master Your Favorite Books</h2>
@@ -59,6 +46,7 @@
                             <span><i class="fas fa-question-circle"></i> 5 concepts</span>
                             <span><i class="fas fa-users"></i> 1.2k learners</span>
                         </div>
+                        <div class="category-badge finance">Finance</div>
                     </div>
 
                     <div class="book-card-home" onclick="promptLogin('atomic-habits')">
@@ -72,9 +60,10 @@
                             <span><i class="fas fa-question-circle"></i> 5 concepts</span>
                             <span><i class="fas fa-users"></i> 2.1k learners</span>
                         </div>
+                        <div class="category-badge self-improvement">Self-Improvement</div>
                     </div>
 
-                    <div class="book-card-home enhanced-home" onclick="showBookOptionsHome('thinking-fast')">
+                    <div class="book-card-home" onclick="promptLogin('thinking-fast')">
                         <div class="book-cover thinking-fast">
                             <div class="book-icon"><i class="fas fa-brain"></i></div>
                             <div class="book-title">Thinking Fast & Slow</div>
@@ -82,23 +71,10 @@
                         <h3>Thinking, Fast and Slow</h3>
                         <p class="author">Daniel Kahneman</p>
                         <div class="book-stats">
-                            <span><i class="fas fa-book-open"></i> 5 lessons</span>
-                            <span><i class="fas fa-question-circle"></i> 5 quizzes</span>
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
                             <span><i class="fas fa-users"></i> 890 learners</span>
                         </div>
-                        <div class="lesson-badge">
-                            <i class="fas fa-graduation-cap"></i> Study Lessons Available
-                        </div>
-                        <div class="book-options-home">
-                            <button class="option-btn lesson-btn"
-                                onclick="event.stopPropagation(); promptLoginForLessons('thinking-fast')">
-                                <i class="fas fa-book-open"></i> Study Lessons
-                            </button>
-                            <button class="option-btn quiz-btn"
-                                onclick="event.stopPropagation(); promptLogin('thinking-fast')">
-                                <i class="fas fa-question-circle"></i> Take Quiz
-                            </button>
-                        </div>
+                        <div class="category-badge psychology">Psychology</div>
                     </div>
 
                     <div class="book-card-home" onclick="promptLogin('mindset')">
@@ -112,6 +88,7 @@
                             <span><i class="fas fa-question-circle"></i> 5 concepts</span>
                             <span><i class="fas fa-users"></i> 750 learners</span>
                         </div>
+                        <div class="category-badge psychology">Psychology</div>
                     </div>
 
                     <div class="book-card-home" onclick="promptLogin('sapiens')">
@@ -125,6 +102,7 @@
                             <span><i class="fas fa-question-circle"></i> 5 concepts</span>
                             <span><i class="fas fa-users"></i> 1.5k learners</span>
                         </div>
+                        <div class="category-badge history">History</div>
                     </div>
 
                     <div class="book-card-home" onclick="promptLogin('deep-work')">
@@ -138,6 +116,7 @@
                             <span><i class="fas fa-question-circle"></i> 5 concepts</span>
                             <span><i class="fas fa-users"></i> 980 learners</span>
                         </div>
+                        <div class="category-badge productivity">Productivity</div>
                     </div>
 
                     <div class="book-card-home" onclick="promptLogin('psychology-money')">
@@ -151,6 +130,7 @@
                             <span><i class="fas fa-question-circle"></i> 5 concepts</span>
                             <span><i class="fas fa-users"></i> 1.1k learners</span>
                         </div>
+                        <div class="category-badge finance">Finance</div>
                     </div>
 
                     <div class="book-card-home" onclick="promptLogin('power-now')">
@@ -164,6 +144,121 @@
                             <span><i class="fas fa-question-circle"></i> 5 concepts</span>
                             <span><i class="fas fa-users"></i> 650 learners</span>
                         </div>
+                        <div class="category-badge mindfulness">Mindfulness</div>
+                    </div>
+
+                    <!-- NEUROSCIENCE BOOKS -->
+                    <div class="book-card-home" onclick="promptLogin('behave')">
+                        <div class="book-cover behave">
+                            <div class="book-icon"><i class="fas fa-brain"></i></div>
+                            <div class="book-title">Behave</div>
+                        </div>
+                        <h3>Behave</h3>
+                        <p class="author">Robert Sapolsky</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 420 learners</span>
+                        </div>
+                        <div class="category-badge neuroscience">Neuroscience</div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('predictably-irrational')">
+                        <div class="book-cover predictably-irrational">
+                            <div class="book-icon"><i class="fas fa-head-side-virus"></i></div>
+                            <div class="book-title">Predictably Irrational</div>
+                        </div>
+                        <h3>Predictably Irrational</h3>
+                        <p class="author">Dan Ariely</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 680 learners</span>
+                        </div>
+                        <div class="category-badge neuroscience">Neuroscience</div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('brain-that-changes')">
+                        <div class="book-cover brain-that-changes">
+                            <div class="book-icon"><i class="fas fa-brain"></i></div>
+                            <div class="book-title">The Brain That Changes Itself</div>
+                        </div>
+                        <h3>The Brain That Changes Itself</h3>
+                        <p class="author">Norman Doidge</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 340 learners</span>
+                        </div>
+                        <div class="category-badge neuroscience">Neuroscience</div>
+                    </div>
+
+                    <!-- AI BOOKS -->
+                    <div class="book-card-home" onclick="promptLogin('life-3-0')">
+                        <div class="book-cover life-3-0">
+                            <div class="book-icon"><i class="fas fa-robot"></i></div>
+                            <div class="book-title">Life 3.0</div>
+                        </div>
+                        <h3>Life 3.0</h3>
+                        <p class="author">Max Tegmark</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 1.2k learners</span>
+                        </div>
+                        <div class="category-badge ai">Artificial Intelligence</div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('human-compatible')">
+                        <div class="book-cover human-compatible">
+                            <div class="book-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="book-title">Human Compatible</div>
+                        </div>
+                        <h3>Human Compatible</h3>
+                        <p class="author">Stuart Russell</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 890 learners</span>
+                        </div>
+                        <div class="category-badge ai">Artificial Intelligence</div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('prompt-engineering-guide')">
+                        <div class="book-cover prompt-engineering-guide">
+                            <div class="book-icon"><i class="fas fa-code"></i></div>
+                            <div class="book-title">Prompt Engineering Guide</div>
+                        </div>
+                        <h3>The Prompt Engineering Guide</h3>
+                        <p class="author">Various Contributors</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 2.3k learners</span>
+                        </div>
+                        <div class="category-badge ai-eng">AI Engineering</div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('generative-ai-handbook')">
+                        <div class="book-cover generative-ai-handbook">
+                            <div class="book-icon"><i class="fas fa-magic"></i></div>
+                            <div class="book-title">Generative AI Handbook</div>
+                        </div>
+                        <h3>Generative AI Handbook</h3>
+                        <p class="author">Multiple Authors</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 1.8k learners</span>
+                        </div>
+                        <div class="category-badge ai-eng">AI Engineering</div>
+                    </div>
+
+                    <div class="book-card-home" onclick="promptLogin('agentic-ai-systems')">
+                        <div class="book-cover agentic-ai-systems">
+                            <div class="book-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="book-title">Agentic AI Systems</div>
+                        </div>
+                        <h3>Agentic AI Systems</h3>
+                        <p class="author">Research Collective</p>
+                        <div class="book-stats">
+                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-users"></i> 950 learners</span>
+                        </div>
+                        <div class="category-badge ai-eng">AI Engineering</div>
                     </div>
                 </div>
 
@@ -264,6 +359,21 @@
                     <i class="fas fa-rocket"></i> Start Learning Today
                 </button>
                 <p class="cta-subtitle">Join thousands of learners mastering their favorite books</p>
+            </div>
+
+            <div class="stats-preview bottom-stats">
+                <div class="stat">
+                    <span class="number">4,250</span>
+                    <span class="label">Concepts Mastered</span>
+                </div>
+                <div class="stat">
+                    <span class="number">320</span>
+                    <span class="label">Active Learners</span>
+                </div>
+                <div class="stat">
+                    <span class="number">16</span>
+                    <span class="label">Books Available</span>
+                </div>
             </div>
         </div>
 
@@ -425,7 +535,6 @@
 
             <button class="nav-button" onclick="showScreen('books')">Choose a Book</button>
             <button class="nav-button secondary" onclick="showScreen('leaderboard')">View Leaderboard</button>
-            <button class="nav-button secondary" onclick="showScreen('learning-tips')">Learning Tips</button>
         </div>
 
         <!-- Learning Tips Screen -->
@@ -544,35 +653,24 @@
                     </div>
                     <h3>Rich Dad Poor Dad</h3>
                     <div class="book-author">Robert Kiyosaki</div>
+                    <div class="category-badge finance">Finance</div>
                     <div class="progress">
                         <div class="progress-bar" style="width: 60%"></div>
                         <span>3/5 concepts mastered</span>
                     </div>
                 </div>
 
-                <div class="book-card enhanced-book" onclick="showBookOptions('thinking-fast')">
+                <div class="book-card" onclick="selectBook('thinking-fast')">
                     <div class="book-cover thinking-fast">
                         <div class="book-icon"><i class="fas fa-brain"></i></div>
                         <div class="book-title">Thinking Fast & Slow</div>
                     </div>
                     <h3>Thinking, Fast and Slow</h3>
                     <div class="book-author">Daniel Kahneman</div>
-                    <div class="lesson-badge">
-                        <i class="fas fa-graduation-cap"></i> Study Lessons Available
-                    </div>
+                    <div class="category-badge psychology">Psychology</div>
                     <div class="progress">
                         <div class="progress-bar" style="width: 40%"></div>
                         <span>2/5 concepts mastered</span>
-                    </div>
-                    <div class="book-options">
-                        <button class="option-btn lesson-btn"
-                            onclick="event.stopPropagation(); showLessons('thinking-fast')">
-                            <i class="fas fa-book-open"></i> Study Lessons
-                        </button>
-                        <button class="option-btn quiz-btn"
-                            onclick="event.stopPropagation(); selectBook('thinking-fast')">
-                            <i class="fas fa-question-circle"></i> Take Quiz
-                        </button>
                     </div>
                 </div>
 
@@ -583,6 +681,7 @@
                     </div>
                     <h3>Atomic Habits</h3>
                     <div class="book-author">James Clear</div>
+                    <div class="category-badge self-improvement">Self-Improvement</div>
                     <div class="progress">
                         <div class="progress-bar" style="width: 80%"></div>
                         <span>4/5 concepts mastered</span>

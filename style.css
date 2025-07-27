@@ -9,12 +9,14 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 .app {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 40px;
 }
 
 .screen {
@@ -40,9 +42,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     flex-wrap: wrap;
     gap: 20px;
+    padding: 0 20px;
 }
 
 .logo {
@@ -101,8 +104,18 @@ header {
 .stats-preview {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 40px;
     margin: 40px 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stats-preview.bottom-stats {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    padding-top: 40px;
+    border-top: 1px solid #e0e0e0;
 }
 
 .stat {
@@ -163,9 +176,10 @@ header {
 
 .books-grid-home {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
     margin-bottom: 40px;
+    max-width: none;
 }
 
 .book-card-home {
@@ -266,10 +280,10 @@ header {
 
 .science-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     margin-bottom: 40px;
-    padding: 0 20px;
+    padding: 0;
 }
 
 .science-card {
@@ -322,9 +336,9 @@ header {
 
 .research-backing {
     text-align: center;
-    padding: 30px 20px;
+    padding: 30px;
     background: white;
-    margin: 0 20px;
+    margin: 0;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
@@ -1066,8 +1080,8 @@ header {
 
 .community-badges {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
     margin-bottom: 30px;
 }
 
@@ -1590,8 +1604,8 @@ header {
 /* Books Grid */
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
     margin-bottom: 30px;
 }
 
@@ -1726,6 +1740,7 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    margin-top: 12px;
     margin-bottom: 10px;
 }
 
@@ -1741,6 +1756,78 @@ header {
 
 .category-badge.ai-eng {
     background: linear-gradient(45deg, #1565C0, #42A5F5);
+    color: white;
+}
+
+.category-badge.finance {
+    background: linear-gradient(45deg, #2E7D32, #4CAF50);
+    color: white;
+}
+
+.category-badge.self-improvement {
+    background: linear-gradient(45deg, #F57C00, #FF9800);
+    color: white;
+}
+
+.category-badge.psychology {
+    background: linear-gradient(45deg, #1976D2, #2196F3);
+    color: white;
+}
+
+.category-badge.history {
+    background: linear-gradient(45deg, #5D4037, #795548);
+    color: white;
+}
+
+.category-badge.productivity {
+    background: linear-gradient(45deg, #303F9F, #3F51B5);
+    color: white;
+}
+
+.category-badge.mindfulness {
+    background: linear-gradient(45deg, #00796B, #009688);
+    color: white;
+}E91E63, #F06292);
+    color: white;
+}
+
+.category-badge.ai {
+    background: linear-gradient(45deg, #37474F, #607D8B);
+    color: white;
+}
+
+.category-badge.ai-eng {
+    background: linear-gradient(45deg, #1565C0, #42A5F5);
+    color: white;
+}
+
+.category-badge.finance {
+    background: linear-gradient(45deg, #2E7D32, #4CAF50);
+    color: white;
+}
+
+.category-badge.self-improvement {
+    background: linear-gradient(45deg, #F57C00, #FF9800);
+    color: white;
+}
+
+.category-badge.psychology {
+    background: linear-gradient(45deg, #1976D2, #2196F3);
+    color: white;
+}
+
+.category-badge.history {
+    background: linear-gradient(45deg, #5D4037, #795548);
+    color: white;
+}
+
+.category-badge.productivity {
+    background: linear-gradient(45deg, #303F9F, #3F51B5);
+    color: white;
+}
+
+.category-badge.mindfulness {
+    background: linear-gradient(45deg, #00796B, #009688);
     color: white;
 }
 
@@ -2151,31 +2238,51 @@ header {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .app {
+        max-width: 900px;
+        padding: 20px 30px;
+    }
+    
+    .books-grid-home {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+    }
+    
+    .science-cards {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+}
+
 @media (max-width: 768px) {
     .app {
-        padding: 10px;
+        max-width: 100%;
+        padding: 15px 20px;
     }
     
     .screen {
-        padding: 20px;
+        padding: 25px;
     }
     
     header {
         flex-direction: column;
         text-align: center;
+        padding: 0;
     }
     
-    .header-content h1 {
+    .logo span {
         font-size: 2.5rem;
     }
     
     .stats-preview {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 20px;
+        max-width: none;
     }
     
     .books-grid-home {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 20px;
     }
     
@@ -2188,12 +2295,19 @@ header {
         height: 100px;
     }
     
+    .science-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
     .community-badges {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     .books-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
     
     .book-info {
@@ -2208,5 +2322,20 @@ header {
     
     .badges {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .app {
+        padding: 10px 15px;
+    }
+    
+    .screen {
+        padding: 20px;
+    }
+    
+    .books-grid-home {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 15px;
     }
 }
