@@ -441,6 +441,28 @@ function showScreen(screenId) {
     }
 }
 
+// Book selection with options
+function showBookOptions(bookId) {
+    // For enhanced books, show options instead of direct quiz
+    if (bookId === 'thinking-fast') {
+        // Options are shown in the UI, no additional action needed
+        return;
+    } else {
+        selectBook(bookId);
+    }
+}
+
+// Show lessons for a book
+function showLessons(bookId) {
+    if (!isLoggedIn) {
+        promptLogin(bookId);
+        return;
+    }
+    
+    currentBook = bookId;
+    showScreen('lessons');
+}
+
 // Book selection
 function selectBook(bookId) {
     if (!isLoggedIn) {
@@ -724,6 +746,174 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(typeWriter, 500);
     }
 });
+
+// Lesson system data
+const lessonData = {
+    1: {
+        title: "The Characters of the Story",
+        duration: "15 min read",
+        objectives: [
+            "Understand the difference between System 1 and System 2 thinking",
+            "Recognize examples of automatic vs. controlled mental processes",
+            "Apply the two-system framework to everyday decisions"
+        ],
+        content: `
+            <h3>Introduction to Two Systems</h3>
+            <p>Daniel Kahneman introduces us to the two systems that drive the way we think:</p>
+            
+            <div class="concept-box">
+                <h4>System 1: Fast Thinking</h4>
+                <ul>
+                    <li><strong>Automatic:</strong> Operates without conscious effort</li>
+                    <li><strong>Intuitive:</strong> Based on learned associations and emotions</li>
+                    <li><strong>Fast:</strong> Provides immediate impressions and feelings</li>
+                    <li><strong>Examples:</strong> Recognizing faces, simple math (2+2), reading words</li>
+                </ul>
+            </div>
+
+            <div class="concept-box">
+                <h4>System 2: Slow Thinking</h4>
+                <ul>
+                    <li><strong>Effortful:</strong> Requires attention and conscious control</li>
+                    <li><strong>Logical:</strong> Follows rules and weighs evidence</li>
+                    <li><strong>Slow:</strong> Takes time to process complex information</li>
+                    <li><strong>Examples:</strong> Complex math (17 × 24), parking in a narrow space, comparing products</li>
+                </ul>
+            </div>
+
+            <h3>The Interaction Between Systems</h3>
+            <p>These systems don't work in isolation. System 1 continuously generates impressions, intuitions, and feelings that become the main sources of the explicit beliefs and deliberate choices of System 2.</p>
+
+            <p>System 2 normally accepts the suggestions of System 1 with little modification. Only when System 1 runs into difficulty does System 2 become more fully engaged.</p>
+
+            <div class="example-box">
+                <h4>Real-World Example</h4>
+                <p>When you see the equation "2 + 2 = ?", System 1 automatically provides the answer "4" without any conscious effort. But when you see "17 × 24 = ?", System 1 cannot provide an immediate answer, so System 2 must take over with deliberate calculation.</p>
+            </div>
+        `,
+        homework: [
+            {
+                type: "reflection",
+                title: "System Recognition Exercise",
+                description: "For the next day, keep a small notebook and record 5 examples each of System 1 and System 2 thinking you observe in yourself.",
+                example: "System 1: Automatically knowing your friend's voice on the phone. System 2: Calculating the tip at a restaurant."
+            },
+            {
+                type: "practice",
+                title: "Stroop Effect Experiment",
+                description: "Try the Stroop test online (search 'Stroop test'). Notice how System 1 automatically reads words while System 2 tries to name colors. Reflect on this conflict.",
+                example: "When you see the word 'BLUE' written in red ink, System 1 wants to say 'blue' while System 2 knows the correct answer is 'red'."
+            },
+            {
+                type: "application",
+                title: "Decision Analysis",
+                description: "Think of a recent important decision you made. Identify which parts were System 1 (gut feelings, immediate reactions) and which were System 2 (careful analysis, pros/cons lists).",
+                example: "Choosing a restaurant: System 1 might be attracted to familiar cuisine, while System 2 considers price, location, and reviews."
+            }
+        ]
+    }
+};
+
+let currentLessonId = 1;
+
+// Open a specific lesson
+function openLesson(lessonId) {
+    if (lessonId > 1 && !isLessonCompleted(lessonId - 1)) {
+        showLockedMessage();
+        return;
+    }
+    
+    currentLessonId = lessonId;
+    loadLessonContent(lessonId);
+    showScreen('lesson-detail');
+}
+
+// Load lesson content
+function loadLessonContent(lessonId) {
+    const lesson = lessonData[lessonId];
+    if (!lesson) return;
+    
+    // Update lesson header
+    document.getElementById('lesson-title').textContent = lesson.title;
+    document.getElementById('lesson-duration').textContent = lesson.duration;
+    document.getElementById('lesson-progress-text').textContent = `Lesson ${lessonId} of 5`;
+    document.getElementById('lesson-progress-bar').style.width = `${(lessonId / 5) * 100}%`;
+    
+    // Update objectives
+    const objectivesList = document.getElementById('lesson-objectives');
+    objectivesList.innerHTML = lesson.objectives.map(obj => `<li>${obj}</li>`).join('');
+    
+    // Update content
+    document.getElementById('lesson-content').innerHTML = lesson.content;
+    
+    // Update homework
+    const homeworkContainer = document.getElementById('homework-exercises');
+    homeworkContainer.innerHTML = lesson.homework.map((hw, index) => `
+        <div class="homework-item">
+            <div class="homework-header">
+                <span class="homework-number">${index + 1}</span>
+                <h4>${hw.title}</h4>
+                <span class="homework-type">${hw.type}</span>
+            </div>
+            <p class="homework-description">${hw.description}</p>
+            <div class="homework-example">
+                <strong>Example:</strong> ${hw.example}
+            </div>
+        </div>
+    `).join('');
+    
+    // Update navigation buttons
+    const prevBtn = document.getElementById('prev-lesson');
+    const nextBtn = document.getElementById('next-lesson');
+    
+    prevBtn.disabled = lessonId === 1;
+    nextBtn.disabled = lessonId === 5;
+    
+    if (lessonId === 1) {
+        prevBtn.style.opacity = '0.5';
+    } else {
+        prevBtn.style.opacity = '1';
+    }
+}
+
+// Navigate between lessons
+function navigateLesson(direction) {
+    const newLessonId = currentLessonId + direction;
+    if (newLessonId >= 1 && newLessonId <= 5) {
+        openLesson(newLessonId);
+    }
+}
+
+// Complete a lesson
+function completeLesson() {
+    // Mark lesson as completed in localStorage
+    const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]');
+    if (!completedLessons.includes(currentLessonId)) {
+        completedLessons.push(currentLessonId);
+        localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
+    }
+    
+    // Show completion message
+    alert(`Lesson ${currentLessonId} completed! 🎉\n\nDon't forget to complete the practice exercises to reinforce your learning.`);
+    
+    // Navigate to next lesson or back to lessons list
+    if (currentLessonId < 5) {
+        openLesson(currentLessonId + 1);
+    } else {
+        showScreen('lessons');
+    }
+}
+
+// Check if lesson is completed
+function isLessonCompleted(lessonId) {
+    const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]');
+    return completedLessons.includes(lessonId);
+}
+
+// Show locked message
+function showLockedMessage() {
+    alert('Complete the previous lesson to unlock this one! 🔒');
+}
 
 // Set daily learning tip
 function setDailyTip() {

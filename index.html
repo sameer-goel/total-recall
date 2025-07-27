@@ -15,7 +15,10 @@
         <div id="landing" class="screen active">
             <header>
                 <div class="header-content">
-                    <h1>📚 BookQuiz</h1>
+                    <div class="logo" onclick="showScreen('landing')">
+                        <i class="fas fa-home"></i>
+                        <span>📚 BookQuiz</span>
+                    </div>
                     <p>Master what you read through active recall</p>
                 </div>
                 <div class="header-actions">
@@ -79,8 +82,12 @@
                         <h3>Thinking, Fast and Slow</h3>
                         <p class="author">Daniel Kahneman</p>
                         <div class="book-stats">
-                            <span><i class="fas fa-question-circle"></i> 5 concepts</span>
+                            <span><i class="fas fa-book-open"></i> 5 lessons</span>
+                            <span><i class="fas fa-question-circle"></i> 5 quizzes</span>
                             <span><i class="fas fa-users"></i> 890 learners</span>
+                        </div>
+                        <div class="lesson-badge">
+                            <i class="fas fa-graduation-cap"></i> Study Lessons Available
                         </div>
                     </div>
 
@@ -252,6 +259,13 @@
 
         <!-- Login Screen -->
         <div id="login" class="screen">
+            <div class="screen-header">
+                <div class="logo-nav" onclick="showScreen('landing')">
+                    <i class="fas fa-home"></i>
+                    <span>📚 BookQuiz</span>
+                </div>
+            </div>
+
             <div class="login-container">
                 <div class="login-header">
                     <h2><i class="fas fa-sign-in-alt"></i> Welcome Back</h2>
@@ -296,6 +310,13 @@
 
         <!-- Profile Setup -->
         <div id="setup" class="screen">
+            <div class="screen-header">
+                <div class="logo-nav" onclick="showScreen('landing')">
+                    <i class="fas fa-home"></i>
+                    <span>📚 BookQuiz</span>
+                </div>
+            </div>
+
             <div class="setup-header">
                 <h2>Welcome to BookQuiz! 👋</h2>
                 <p>Let's set up your learning profile</p>
@@ -334,6 +355,13 @@
 
         <!-- User Profile -->
         <div id="profile" class="screen">
+            <div class="screen-header">
+                <div class="logo-nav" onclick="showScreen('landing')">
+                    <i class="fas fa-home"></i>
+                    <span>📚 BookQuiz</span>
+                </div>
+            </div>
+
             <div class="profile-header">
                 <div class="avatar">👤</div>
                 <div class="user-info">
@@ -392,6 +420,13 @@
 
         <!-- Learning Tips Screen -->
         <div id="learning-tips" class="screen">
+            <div class="screen-header">
+                <div class="logo-nav" onclick="showScreen('landing')">
+                    <i class="fas fa-home"></i>
+                    <span>📚 BookQuiz</span>
+                </div>
+            </div>
+
             <div class="tips-header">
                 <h2><i class="fas fa-graduation-cap"></i> Master Active Recall</h2>
                 <p>Evidence-based techniques to maximize your learning</p>
@@ -483,6 +518,13 @@
 
         <!-- Book Selection -->
         <div id="books" class="screen">
+            <div class="screen-header">
+                <div class="logo-nav" onclick="showScreen('landing')">
+                    <i class="fas fa-home"></i>
+                    <span>📚 BookQuiz</span>
+                </div>
+            </div>
+
             <h2>Choose Your Book</h2>
             <div class="books-grid">
                 <div class="book-card" onclick="selectBook('rich-dad')">
@@ -498,16 +540,29 @@
                     </div>
                 </div>
 
-                <div class="book-card" onclick="selectBook('thinking-fast')">
+                <div class="book-card enhanced-book" onclick="showBookOptions('thinking-fast')">
                     <div class="book-cover thinking-fast">
                         <div class="book-icon"><i class="fas fa-brain"></i></div>
                         <div class="book-title">Thinking Fast & Slow</div>
                     </div>
                     <h3>Thinking, Fast and Slow</h3>
                     <div class="book-author">Daniel Kahneman</div>
+                    <div class="lesson-badge">
+                        <i class="fas fa-graduation-cap"></i> Study Lessons Available
+                    </div>
                     <div class="progress">
                         <div class="progress-bar" style="width: 40%"></div>
                         <span>2/5 concepts mastered</span>
+                    </div>
+                    <div class="book-options">
+                        <button class="option-btn lesson-btn"
+                            onclick="event.stopPropagation(); showLessons('thinking-fast')">
+                            <i class="fas fa-book-open"></i> Study Lessons
+                        </button>
+                        <button class="option-btn quiz-btn"
+                            onclick="event.stopPropagation(); selectBook('thinking-fast')">
+                            <i class="fas fa-question-circle"></i> Take Quiz
+                        </button>
                     </div>
                 </div>
 
@@ -597,6 +652,10 @@
         <div id="quiz" class="screen">
             <div class="quiz-header">
                 <div class="quiz-top-bar">
+                    <div class="logo-nav" onclick="showScreen('landing')">
+                        <i class="fas fa-home"></i>
+                        <span>📚 BookQuiz</span>
+                    </div>
                     <button class="quit-quiz-btn" onclick="confirmQuitQuiz()">
                         <i class="fas fa-times"></i> Quit Quiz
                     </button>
@@ -654,6 +713,13 @@
 
         <!-- Results -->
         <div id="results" class="screen">
+            <div class="screen-header">
+                <div class="logo-nav" onclick="showScreen('landing')">
+                    <i class="fas fa-home"></i>
+                    <span>📚 BookQuiz</span>
+                </div>
+            </div>
+
             <div class="results-header">
                 <h2>Quiz Complete! 🎉</h2>
                 <div class="score-circle">
@@ -690,6 +756,13 @@
 
         <!-- Leaderboard -->
         <div id="leaderboard" class="screen">
+            <div class="screen-header">
+                <div class="logo-nav" onclick="showScreen('landing')">
+                    <i class="fas fa-home"></i>
+                    <span>📚 BookQuiz</span>
+                </div>
+            </div>
+
             <h2>Community Leaderboard</h2>
 
             <div class="leaderboard-tabs">
@@ -737,6 +810,194 @@
 
             <button class="nav-button secondary" onclick="showScreen('profile')">Back to Profile</button>
         </div>
+
+        <!-- Study Lessons Screen -->
+        <div id="lessons" class="screen">
+            <div class="screen-header">
+                <div class="logo-nav" onclick="showScreen('landing')">
+                    <i class="fas fa-home"></i>
+                    <span>📚 BookQuiz</span>
+                </div>
+            </div>
+
+            <div class="lessons-header">
+                <div class="book-info-header">
+                    <div class="book-cover thinking-fast small">
+                        <div class="book-icon"><i class="fas fa-brain"></i></div>
+                        <div class="book-title">Thinking Fast & Slow</div>
+                    </div>
+                    <div class="book-details">
+                        <h2>Study Lessons</h2>
+                        <p class="author">Daniel Kahneman</p>
+                        <p class="description">Master the concepts of behavioral economics and cognitive psychology
+                            through structured lessons</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lessons-grid">
+                <div class="lesson-card" onclick="openLesson(1)">
+                    <div class="lesson-number">1</div>
+                    <div class="lesson-content">
+                        <h3>The Characters of the Story</h3>
+                        <p class="lesson-summary">Introduction to System 1 and System 2 thinking - the fast, intuitive
+                            mind vs. the slow, deliberate mind.</p>
+                        <div class="lesson-meta">
+                            <span><i class="fas fa-clock"></i> 15 min read</span>
+                            <span><i class="fas fa-tasks"></i> 3 exercises</span>
+                        </div>
+                        <div class="lesson-status completed">
+                            <i class="fas fa-check-circle"></i> Completed
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card" onclick="openLesson(2)">
+                    <div class="lesson-number">2</div>
+                    <div class="lesson-content">
+                        <h3>Attention and Effort</h3>
+                        <p class="lesson-summary">How mental effort works, the limits of attention, and why multitasking
+                            is largely a myth.</p>
+                        <div class="lesson-meta">
+                            <span><i class="fas fa-clock"></i> 18 min read</span>
+                            <span><i class="fas fa-tasks"></i> 4 exercises</span>
+                        </div>
+                        <div class="lesson-status current">
+                            <i class="fas fa-play-circle"></i> Current
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card locked" onclick="showLockedMessage()">
+                    <div class="lesson-number">3</div>
+                    <div class="lesson-content">
+                        <h3>The Lazy Controller</h3>
+                        <p class="lesson-summary">Understanding cognitive ease, mental shortcuts, and why our brains
+                            prefer the path of least resistance.</p>
+                        <div class="lesson-meta">
+                            <span><i class="fas fa-clock"></i> 20 min read</span>
+                            <span><i class="fas fa-tasks"></i> 5 exercises</span>
+                        </div>
+                        <div class="lesson-status locked">
+                            <i class="fas fa-lock"></i> Complete Lesson 2 to unlock
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card locked" onclick="showLockedMessage()">
+                    <div class="lesson-number">4</div>
+                    <div class="lesson-content">
+                        <h3>The Associative Machine</h3>
+                        <p class="lesson-summary">How memory works, priming effects, and the automatic associations that
+                            shape our thoughts.</p>
+                        <div class="lesson-meta">
+                            <span><i class="fas fa-clock"></i> 22 min read</span>
+                            <span><i class="fas fa-tasks"></i> 4 exercises</span>
+                        </div>
+                        <div class="lesson-status locked">
+                            <i class="fas fa-lock"></i> Locked
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card locked" onclick="showLockedMessage()">
+                    <div class="lesson-number">5</div>
+                    <div class="lesson-content">
+                        <h3>Cognitive Ease</h3>
+                        <p class="lesson-summary">The feeling of familiarity, repetition effects, and how ease of
+                            processing influences our judgments.</p>
+                        <div class="lesson-meta">
+                            <span><i class="fas fa-clock"></i> 16 min read</span>
+                            <span><i class="fas fa-tasks"></i> 3 exercises</span>
+                        </div>
+                        <div class="lesson-status locked">
+                            <i class="fas fa-lock"></i> Locked
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lessons-actions">
+                <button class="nav-button" onclick="selectBook('thinking-fast')">
+                    <i class="fas fa-question-circle"></i> Take Final Quiz
+                </button>
+                <button class="nav-button secondary" onclick="showScreen('books')">Back to Books</button>
+            </div>
+        </div>
+
+        <!-- Individual Lesson Screen -->
+        <div id="lesson-detail" class="screen">
+            <div class="screen-header">
+                <div class="logo-nav" onclick="showScreen('landing')">
+                    <i class="fas fa-home"></i>
+                    <span>📚 BookQuiz</span>
+                </div>
+            </div>
+
+            <div class="lesson-detail-header">
+                <button class="back-btn" onclick="showScreen('lessons')">
+                    <i class="fas fa-arrow-left"></i> Back to Lessons
+                </button>
+                <div class="lesson-progress">
+                    <span id="lesson-progress-text">Lesson 1 of 5</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="lesson-progress-bar" style="width: 20%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-content-area">
+                <div class="lesson-title-section">
+                    <h1 id="lesson-title">The Characters of the Story</h1>
+                    <div class="lesson-meta-info">
+                        <span><i class="fas fa-clock"></i> <span id="lesson-duration">15 min read</span></span>
+                        <span><i class="fas fa-book"></i> Chapter 1-2</span>
+                        <span><i class="fas fa-user"></i> Daniel Kahneman</span>
+                    </div>
+                </div>
+
+                <div class="lesson-summary-box">
+                    <h3><i class="fas fa-lightbulb"></i> Key Learning Objectives</h3>
+                    <ul id="lesson-objectives">
+                        <li>Understand the difference between System 1 and System 2 thinking</li>
+                        <li>Recognize examples of automatic vs. controlled mental processes</li>
+                        <li>Apply the two-system framework to everyday decisions</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-content-text" id="lesson-content">
+                    <!-- Lesson content will be loaded here -->
+                </div>
+
+                <div class="homework-section">
+                    <h3><i class="fas fa-pencil-alt"></i> Practice Exercises</h3>
+                    <div class="homework-list" id="homework-exercises">
+                        <!-- Homework will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="lesson-navigation">
+                    <button class="lesson-nav-btn" id="prev-lesson" onclick="navigateLesson(-1)" disabled>
+                        <i class="fas fa-chevron-left"></i> Previous Lesson
+                    </button>
+                    <button class="lesson-complete-btn" onclick="completeLesson()">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <button class="lesson-nav-btn" id="next-lesson" onclick="navigateLesson(1)">
+                        Next Lesson <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>Built with ❤️ by <a href="https://github.com/sameer-goel" target="_blank">Sameer Goel</a></p>
+                <p>Powered by learning science research • <a href="https://github.com/sameer-goel/total-recall"
+                        target="_blank">View Source</a></p>
+            </div>
+        </footer>
 
         <!-- Quit Quiz Confirmation Modal -->
         <div id="quit-modal" class="modal hidden">
